@@ -10,7 +10,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.example.login_auth_api.domain.User;
+import com.example.login_auth_api.domain.user.User;
 import com.example.login_auth_api.repositories.UserRepository;
 
 import jakarta.servlet.FilterChain;
@@ -20,28 +20,31 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @Component
 public class SecurityFilter extends OncePerRequestFilter {
-    @Autowired
-    TokenService tokenService;
-    @Autowired
-    UserRepository userRepository;
+	@Autowired
+	TokenService tokenService;
+	@Autowired
+	UserRepository userRepository;
 
-    @Override
-    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        var token = this.recoverToken(request);
-        var login = tokenService.validateToken(token);
+	@Override
+	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+			throws ServletException, IOException {
+		var token = this.recoverToken(request);
+		var login = tokenService.validateToken(token);
 
-        if(login != null){
-            User user = userRepository.findByEmail(login).orElseThrow(() -> new RuntimeException("Usuario nao encontrado"));
-            var authorities = Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"));
-            var authentication = new UsernamePasswordAuthenticationToken(user, null, authorities);
-            SecurityContextHolder.getContext().setAuthentication(authentication);
-        }
-        filterChain.doFilter(request, response);
-    }
+		if (login != null) {
+			User user = userRepository.findByEmail(login)
+					.orElseThrow(() -> new RuntimeException("Usuario nao encontrado"));
+			var authorities = Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER"));
+			var authentication = new UsernamePasswordAuthenticationToken(user, null, authorities);
+			SecurityContextHolder.getContext().setAuthentication(authentication);
+		}
+		filterChain.doFilter(request, response);
+	}
 
-    private String recoverToken(HttpServletRequest request){
-        var authHeader = request.getHeader("Authorization");
-        if(authHeader == null) return null;
-        return authHeader.replace("Bearer ", "");
-    }
+	private String recoverToken(HttpServletRequest request) {
+		var authHeader = request.getHeader("Authorization");
+		if (authHeader == null)
+			return null;
+		return authHeader.replace("Bearer ", "");
+	}
 }
