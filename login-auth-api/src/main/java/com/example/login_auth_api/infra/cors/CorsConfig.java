@@ -9,7 +9,7 @@ public class CorsConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/**").allowedOrigins("https://git.heroku.com/moveit-front.git").allowedMethods("GET", "POST");
+		registry.addMapping("/**").allowedOrigins("https://move-it-khaki-psi.vercel.app/login").allowedMethods("GET", "POST");
 	}
 }
 
