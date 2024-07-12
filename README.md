@@ -24,25 +24,16 @@ O front-end desse projeto se encontra nesse reporitorio: https://github.com/myle
 * POST /login
 Autentica um usuário e retorna um token JWT.
 
-- Corpo da Requisição:
-```
-{
-  "email": "email@email.com",
-  "password": "senha"
-}
-```
-
-- Corpo da Resposta:
-```
-{
-  "name" : "username"
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-}
-```
+<div align="start">
+![image](https://github.com/user-attachments/assets/3e7798ac-b25d-45be-ac83-716fef9fba71)
+</div>
 
 * POST /signup
 Cadastro de novos usuários
+
+<div align="start">
 ![image](https://github.com/user-attachments/assets/518c22f4-47ec-4872-8665-bac4691d5740)
+</div>
 
 ### Estrutura do Projeto
 
