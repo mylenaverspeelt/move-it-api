@@ -2,7 +2,7 @@
 
 Move-it API é uma aplicação back-end desenvolvida com Spring Boot que fornece funcionalidades básicas de autenticação e autorização para login de usuários. A aplicação usa o banco de dados H2 para armazenamento e gerenciamento de dados. 
 
-O front-end desse projeto se encontra nesse reporitorio: www.com
+O front-end desse projeto se encontra nesse reporitorio: https://github.com/mylenaverspeelt/move-it
 
 ### Funcionalidades
 
@@ -42,27 +42,7 @@ Autentica um usuário e retorna um token JWT.
 
 * POST /signup
 Cadastro de novos usuários
-
-- Corpo da Requisição:
-```
-{
-  name: "username",
-  email: "email@email.com",
-  password: "123456"
-}
-
-```
-
-- Corpo da Respsota:
-```
-{
-  name: "mylena",
-  email: "mymy@mymy.com",
-  password: "123456"
-}
-
-```
-
+![image](https://github.com/user-attachments/assets/518c22f4-47ec-4872-8665-bac4691d5740)
 
 ### Estrutura do Projeto
 
@@ -95,7 +75,6 @@ Pré-requisitos:
 ```
 git clone [https://github.com/seu-usuario/login-auth-api.git](https://github.com/mylenaverspeelt/move-it-api.git)
 cd move-it-api
-
 ```
 
 2. Compilar e Executar o Projeto:
@@ -104,6 +83,5 @@ cd move-it-api
 ```
 mvn clean install
 mvn spring-boot:run
-
 ```
 - A aplicação será iniciada na porta 8080 por padrão.
