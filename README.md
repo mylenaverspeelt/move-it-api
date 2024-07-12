@@ -61,7 +61,7 @@ Pré-requisitos:
 1. Abra o terminal, clone o repositório e navegue até a raiz do projeto:
 
 ```
-git clone [https://github.com/seu-usuario/login-auth-api.git](https://github.com/mylenaverspeelt/move-it-api.git)
+git clone https://github.com/mylenaverspeelt/move-it-api.git
 cd move-it-api
 ```
 
@@ -73,3 +73,5 @@ mvn clean install
 mvn spring-boot:run
 ```
 - A aplicação será iniciada na porta 8080 por padrão.
+
+#### Desenvolvido por: Mylena Verspeelt
