@@ -22,12 +22,12 @@ O front-end desse projeto se encontra nesse reporitorio: https://github.com/myle
 
 ### Endpoints
 * POST /login
-Autentica um usuário e retorna um token JWT.
+- Autentica um usuário e retorna um token JWT.
 
 ![image](https://github.com/user-attachments/assets/3e7798ac-b25d-45be-ac83-716fef9fba71)
 
-* POST /signup
-Cadastro de novos usuários
+* POST /register
+- Cadastro de novos usuários
 
 ![image](https://github.com/user-attachments/assets/518c22f4-47ec-4872-8665-bac4691d5740)
 
