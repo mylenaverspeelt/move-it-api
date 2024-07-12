@@ -35,7 +35,34 @@ O front-end desse projeto se encontra nesse reporitorio: https://github.com/myle
 ### Estrutura do Projeto
 
 ```
-
+login-auth-api/
+│
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/example/login_auth_api/
+│   │   │       ├── controller/
+│   │   │       │   ├── AuthController.java
+│   │   │       │   └── UserController.java
+│   │   │       ├── domain/
+│   │   │       │   └── User.java
+│   │   │       ├── dto/
+│   │   │       │   ├── LoginRequestDTO.java
+│   │   │       │   ├── RegisterRequestDTO.java
+│   │   │       │   └── ResponseDTO.java
+│   │   │       ├── infra/
+│   │   │       │   ├── cors/
+│   │   │       │   │   └── CorsConfig.java
+│   │   │       │   └── security/
+│   │   │       │       ├── CustomUserDetailsService.java
+│   │   │       │       ├── SecurityConfig.java
+│   │   │       │       ├── SecurityFilter.java
+│   │   │       │       └── TokenService.java
+│   │   │       └── repositories/
+│   │   │           └── UserRepository.java
+│   └── test/
+├── target/
+├── pom.xml
 ```
 
 ### Hospedagem na AWS
